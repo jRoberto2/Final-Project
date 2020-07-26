@@ -1,15 +1,18 @@
 //Final Project
 
+document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+})
+
 //Every to do should have an X to the right that will delete the todo
-var list = document.getElementById("list");
-var item = document.getElementsByName("li");
+var list = document.getElementsByTagName("li");
 var i;
-for (i = 0; i < item.length; i++) {
+for (i = 0; i < list.length; i++) {
     var span = document.createElement("span");
-    var txt = document.createTextNode("X");
-    span.className("close");
+    var txt = document.createTextNode("x");
+    span.className = "close";
     span.appendChild(txt);
-    item[i].appendChild(span);
+    list[i].appendChild(span);
 }
 
 //Delete to do
@@ -23,11 +26,10 @@ for (i = 0; i < close.length; i++) {
 }
 
 //Every to do in the list should have a check button next to it to check off the todo and mark it complete
-var list = document.getElementById("list");
-var item = document.getElementsByName("li");
+var list = document.querySelector("ul");
 list.addEventListener("click", function(e) {
-    if (e.target.tagName === "li") {
-        e.target.classList.toggle("complete");
+    if (e.target.tagName == "li") {
+        e.target.classList.toggle("checked");
     }
 }, false);
 
@@ -40,18 +42,17 @@ function addItem() {
     var itemText = document.createTextNode(value);
     item.appendChild(itemText);
     list.appendChild(item);
-}
 
-var item = document.getElementsByName("li");
-var span = document.createElement("span");
-var txt = document.createTextNode("\u00D7");
-span.className = "close";
-span.appendChild(txt);
-item.appendChild(span);
+    var span = document.createElement("span");
+    var txt = document.createTextNode("X");
+    span.className = "close";
+    span.appendChild(txt);
+    item.appendChild(span);
 
-for (i = 0; o < close.length; i++) {
-    close[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
     }
 }

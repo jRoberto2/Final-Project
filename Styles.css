@@ -6,42 +6,40 @@
     list-style-type: none;
     margin-left: -35px;
     height: 20px;
-    margin-top: -1px;
+    margin-top: 5px;
     padding: 5px;
 }
 
-#list li:hover {
-    background-color: #ececec;
-}
+#list li:hover {background-color: #ececec;}
 
 .complete {
-    text-decoration: line-through;
-    background-color: #8fff8f;
+    float: left;
+    color: green;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    margin-top: -1px;
+    cursor: pointer;
+    border: 1px solid black;
 }
 
 /* Add a check mark */
-ul li.complete::before {
-    content: "";
-    position: absolute;
-    border-color: black;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-}
 
 /* Close button */
 .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
+    float: right;
+    color: red;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    margin-top: -1px;
+    cursor: pointer;
+    border: 1px solid black;
 }
 
 .close:hover {
-    background-color: #f44336;
+    background-color: red;
     color: white;
 }
