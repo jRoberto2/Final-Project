@@ -10,21 +10,21 @@
     padding: 5px;
 }
 
-#list li:hover {background-color: #ececec;}
-
 .complete {
     float: left;
-    color: green;
+    color: black;
     text-align: center;
     width: 20px;
     height: 20px;
     font-size: 20px;
-    margin-top: -1px;
+    margin-top: -3px;
     cursor: pointer;
-    border: 1px solid black;
 }
 
-/* Add a check mark */
+.checked {
+    text-decoration: line-through;
+    background-color: green;
+}
 
 /* Close button */
 .close {

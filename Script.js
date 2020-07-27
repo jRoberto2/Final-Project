@@ -25,14 +25,6 @@ for (i = 0; i < close.length; i++) {
     }
 }
 
-//Every to do in the list should have a check button next to it to check off the todo and mark it complete
-var list = document.querySelector("ul");
-list.addEventListener("click", function(e) {
-    if (e.target.tagName == "li") {
-        e.target.classList.toggle("checked");
-    }
-}, false);
-
 //A new to do should be displayed below any previous to dos
 function addItem() {
     var list = document.getElementById("list");
@@ -49,10 +41,27 @@ function addItem() {
     span.appendChild(txt);
     item.appendChild(span);
 
+    var close = document.getElementsByClassName("close");
+    var i;
     for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
+        close[i].onclick = function() {
             var div = this.parentElement;
             div.style.display = "none";
+        }
+    }
+
+//Every to do in the list should have a check button next to it to check off the todo and mark it complete
+    var span = document.createElement("span");
+    var txt = document.createTextNode("\u2713");
+    span.className = "complete";
+    span.appendChild(txt);
+    item.appendChild(span);
+
+    var complete = document.getElementsByClassName("complete");
+    for (i = 0; i < complete.length; i++) {
+        complete[i].onclick = function () {
+            var span = this.parentElement;
+            span.className = "checked";
         }
     }
 }
